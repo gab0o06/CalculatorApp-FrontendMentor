@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "League Spartan";
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/leaguespartan/v11/kJEnBuEW6A0lliaV_m88ja5Twtx8BWhtkDVmjZvMGYPZA81d.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  font-size: 32px;
+  font-family: "League Spartan";
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.theme1 {
+  /* THEME 1 */
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+
+  --key-background-blue: hsl(225, 21%, 49%);
+  --hey-shadow-blue: hsl(224, 28%, 35%);
+  --key-background-red: hsl(6, 63%, 50%);
+  --hey-shadow-red: hsl(6, 70%, 34%);
+  --key-background-orange: hsl(30, 25%, 89%);
+  --hey-shadow-orange: hsl(28, 16%, 65%);
+
+  --text-color-blue: hsl(221, 14%, 31%);
+  --text-color-white: hsl(0, 0%, 100%);
+  --header-color-white: hsl(0, 0%, 100%);
+  --result-color-white: hsl(0, 0%, 100%);
+  background-color: var(--main-background);
+}
+
+.theme2 {
+  /* THEME 2 */
+  --main-background: hsl(0, 0%, 90%);
+  --toggle-background: hsl(0, 5%, 81%);
+  --screen-background: hsl(0, 0%, 93%);
+
+  --key-background-blue: hsl(185, 42%, 37%);
+  --hey-shadow-blue: hsl(185, 58%, 25%);
+  --key-background-red: hsl(25, 98%, 40%);
+  --hey-shadow-red: hsl(25, 99%, 27%);
+  --key-background-orange: hsl(45, 7%, 89%);
+  --hey-shadow-orange: hsl(35, 11%, 61%);
+
+  --text-color-blue: hsl(60, 10%, 19%);
+  --text-color-white: hsl(0, 0%, 100%);
+  --header-color-white: hsl(60, 10%, 19%);
+  --result-color-white: hsl(0, 0%, 100%);
+  background-color: var(--main-background);
+}
+
+.theme3 {
+  /* THEME 3 */
+  --main-background: hsl(268, 75%, 9%);
+  --toggle-background: hsl(268, 71%, 12%);
+  --screen-background: hsl(268, 71%, 12%);
+
+  --key-background-blue: hsl(281, 89%, 26%);
+  --hey-shadow-blue: hsl(285, 91%, 52%);
+  --key-background-red: hsl(176, 100%, 44%);
+  --hey-shadow-red: hsl(177, 92%, 70%);
+  --key-background-orange: hsl(268, 47%, 21%);
+  --hey-shadow-orange: hsl(290, 70%, 36%);
+
+  --text-color-blue: hsl(52, 100%, 62%);
+  --text-color-dark-blue: hsl(198, 20%, 13%);
+  --text-color-white: hsl(0, 0%, 100%);
+  --header-color-white: hsl(52, 100%, 62%);
+  --result-color-white: hsl(198, 20%, 13%);
+  background-color: var(--main-background);
+}

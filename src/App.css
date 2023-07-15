@@ -1,0 +1,210 @@
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.body__container {
+  min-width: 450px;
+  width: 450px;
+  max-width: 50%;
+}
+
+.calc__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--header-color-white);
+  font-size: 16px;
+}
+
+.calc__result-container {
+  background-color: var(--screen-background);
+  padding: 5px 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.calc__result {
+  color: var(--header-color-white);
+  text-align: end;
+  margin: 15px 0 10px;
+  font-size: 1.75em;
+  overflow: hidden;
+}
+
+.calc__symbols {
+  margin-top: 20px;
+  max-height: 450px;
+  min-height: 350px;
+  height: 40vh;
+  width: 100%;
+  background-color: var(--toggle-background);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  place-content: center;
+}
+
+.calc__symbols-container {
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+
+.calc__func {
+  width: 85%;
+  height: 75%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 8px 0 0;
+  border: none;
+  background-color: var(--key-background-orange);
+  border-bottom: 4px solid var(--hey-shadow-orange);
+  cursor: pointer;
+  color: var(--text-color-blue);
+}
+
+.calc__symbols-container button:nth-child(4) {
+  background-color: var(--key-background-blue);
+  border-bottom: 5px solid var(--hey-shadow-blue);
+  color: var(--text-color-white);
+  font-size: 0.75em;
+}
+
+.calc__symbols-container button:nth-child(17) {
+  grid-area: 5/ 1 / 6 / 3;
+  background-color: var(--key-background-blue);
+  border-bottom: 5px solid var(--hey-shadow-blue);
+  color: var(--text-color-white);
+  font-size: 0.75em;
+  width: 93%;
+}
+.calc__symbols-container button:nth-child(18) {
+  grid-area: 5 / 3 / 6 / 5;
+  background-color: var(--key-background-red);
+  border-bottom: 5px solid var(--hey-shadow-red);
+  color: var(--result-color-white);
+  font-size: 0.75em;
+  width: 93%;
+}
+
+.calc__func:hover {
+  opacity: 0.75;
+}
+
+.theme__selector-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.theme__selector-container p {
+  font-size: 0.75em;
+}
+
+.theme__selector {
+  height: 1.5em;
+  max-width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--toggle-background);
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  margin-bottom: 3px;
+  position: relative;
+}
+
+.theme__one,
+.theme__second,
+.theme__third {
+  height: 0.9em;
+  width: 0.9em;
+  margin: 0 1px;
+  appearance: none;
+  background-color: var(--key-background-red);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.theme__one {
+  margin-left: 5px;
+}
+.theme__third {
+  margin-right: 5px;
+}
+
+.theme__one::before {
+  content: "1";
+  position: absolute;
+  top: -80%;
+  left: 8px;
+  color: var(--header-color-white);
+}
+
+.theme__second::before {
+  content: "2";
+  position: absolute;
+  top: -80%;
+  left: 43%;
+  color: var(--header-color-white);
+}
+
+.theme__third::before {
+  content: "3";
+  position: absolute;
+  top: -80%;
+  right: 8px;
+  color: var(--header-color-white);
+}
+
+.opacity {
+  background-color: var(--key-toggle-blue);
+}
+
+.footer__container {
+  font-size: 0.5em;
+  margin-top: 20px;
+  color: var(--header-color-white);
+}
+
+.footer__container a {
+  color: var(--header-color-white);
+}
+
+@media (max-width: 480px) {
+  .body__container {
+    min-width: 300px;
+    width: 450px;
+    max-width: 90%;
+  }
+  .calc__symbols {
+    height: 80vh;
+  }
+}
