@@ -1,77 +1,74 @@
-# Frontend Mentor - Calculator app solution
+# 🧮 Multi-Theme Calculator App - React & TypeScript
 
-This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+Una calculadora web interactiva y responsiva que permite realizar operaciones matemáticas estándar bajo una interfaz personalizable de tres temas visuales distintos. El proyecto se desarrolló utilizando React y Vite, enfocándose en la gestión estructurada del estado, lógica aritmética precisa y persistencia de preferencias de usuario.
 
-## Table of contents
+🎯 **Demo en Vivo:** [Visita la aplicación desplegada](https://frabjous-faun-d3edec.netlify.app/)
 
-- [Frontend Mentor - Calculator app solution](#frontend-mentor---calculator-app-solution)
-  - [Table of contents](#table-of-contents)
-  - [Overview](#overview)
-    - [The challenge](#the-challenge)
-    - [Screenshot](#screenshot)
-    - [Links](#links)
-  - [My process](#my-process)
-    - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
-    - [Continued development](#continued-development)
-  - [Author](#author)
+---
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+## 🛠️ Stack Tecnológico
 
-## Overview
+* **Core:** React (Vite)
+* **Tipado:** TypeScript
+* **Estilos:** CSS3 Puro (Custom Properties, Flexbox & CSS Grid)
+* **Almacenamiento:** Web Storage API (LocalStorage)
 
-### The challenge
+---
 
-Users should be able to:
+## 🚀 Características Clave y Desafíos Técnicos
 
-- See the size of the elements adjust based on their device's screen size
-- Perform mathmatical operations like addition, subtraction, multiplication, and division
-- Adjust the color theme based on their preference
-- **Bonus**: Have their initial theme preference checked using `local storage` and have any additional changes saved in the browser
+* **Motor Aritmético Reactivo:** Gestión de estados en React para controlar las entradas numéricas, operaciones en cadena, borrado de caracteres (*backspace*) y reinicio total del sistema con precisión matemática.
+* **Sistema de Temas Dinámico (Theming Engine):** Arquitectura visual que conmuta de forma fluida entre tres temas estéticos (Oscuro, Claro y de Alto Contraste) inyectando clases directamente en el cuerpo del DOM.
+* **Persistencia de Preferencias (UX Continua):** Integración con `localStorage` para recordar el último tema seleccionado por el usuario, evitando parpadeos de estilo o reconfiguraciones al recargar la página.
+* **Diseño Elástico Adaptable:** Maquetación fluida mediante CSS Grid para la distribución simétrica del teclado numérico, asegurando que las zonas táctiles mantengan proporciones ideales en mobile y desktop.
 
-### Screenshot
+---
 
-![imageChallengeSolution](https://i.imgur.com/Z4Muni7.png)
+## 📐 Criterio de Ingeniería y Estructura
 
-### Links
+### Conmutación Eficiente de Temas Visuales
+Para resolver el cambio de estilos sin saturar el estado interno de React, se optó por un enfoque híbrido que manipula la lista de clases del `document.body` y almacena la sesión de manera síncrona en el almacenamiento local del navegador:
 
-- Solution URL: [Add solution URL here](https://frabjous-faun-d3edec.netlify.app/)
-- Live Site URL: [Github](https://github.com/gab0o06)
+```typescript
+const toggleTheme = (themeChange: string) => {
+  const actualTheme = document.getElementById(document.body.classList[0]);
+  const nextTheme = document.getElementById(themeChange);
+  
+  // Reemplazo atómico de clases en el DOM para evitar colisiones
+  document.body.classList.replace(document.body.classList[0], themeChange);
 
-## My process
+  actualTheme?.classList.add("opacity");
+  nextTheme?.classList.remove("opacity");
+  
+  // Persistencia de UX
+  localStorage.setItem("theme", themeChange);
+};
+```
+### Arquitectura de Layout con CSS Grid
+La botonera de la calculadora se estructuró de manera declarativa con Grid, gestionando botones de ancho doble (como RESET e =) de forma limpia a través de la propiedad grid-column:
+```css
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
 
-### Built with
-
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Desktop-first workflow
-- [React](https://reactjs.org/) - JS library
-- TypeScript
-
-### What I learned
-
-I've reinforce the concepts of Reactjs, because it's one of my firsts projects using this tecnology. For example, a challenge that I had was to change the themes colors with the inputs. 
-
-```ts
-  const toggleTheme = (themeChange: string) => {
-    const actualTheme = document.getElementById(document.body.classList[0]);
-    const nextTheme = document.getElementById(themeChange);
-    document.body.classList.replace(document.body.classList[0], themeChange);
-
-    actualTheme?.classList.add("opacity");
-    nextTheme?.classList.remove("opacity");
-    localStorage.setItem("theme", themeChange);
-  };
-
+.span-two {
+  grid-column: span 2;
+}
 ```
 
-### Continued development
+## 🔧 Instalación y Configuración
 
-I want to learn more about React hooks and some astro or nextjs estructure, cause they are very usefull tecnologies for development nowadays.
-
-## Author
-
-- Website - [gab0o06](https://github.com/gab0o06)
-- Frontend Mentor - [@gab0o06](https://www.frontendmentor.io/profile/gab0o06)
+1. Clona el repositorio:
+   ```bash
+   git clone [https://github.com/gab0o06/nombre-del-repo.git](https://github.com/gab0o06/nombre-del-repo.git)
+   ```
+2. Instalar las dependencias:
+   ```bash
+   npm install
+   ```
+3. Iniciar servidor
+   ```bash
+   npm run dev
+   ```
