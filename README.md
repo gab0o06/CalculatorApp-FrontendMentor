@@ -2,7 +2,7 @@
 
 Una calculadora web interactiva y responsiva que permite realizar operaciones matemáticas estándar bajo una interfaz personalizable de tres temas visuales distintos. El proyecto se desarrolló utilizando React y Vite, enfocándose en la gestión estructurada del estado, lógica aritmética precisa y persistencia de preferencias de usuario.
 
-🎯 **Demo en Vivo:** [Visita la aplicación desplegada](https://frabjous-faun-d3edec.netlify.app/)
+🎯 **Demo en Vivo:** [Visita la aplicación desplegada](calculatorapp-gab0o06.netlify.app)
 
 ---
 
