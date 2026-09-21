@@ -62,7 +62,7 @@ La botonera de la calculadora se estructuró de manera declarativa con Grid, ges
 
 1. Clona el repositorio:
    ```bash
-   git clone [https://github.com/gab0o06/nombre-del-repo.git](https://github.com/gab0o06/nombre-del-repo.git)
+   git clone [https://github.com/gab0o06/CalculatorApp-FrontendMentor.git](https://github.com/gab0o06/CalculatorApp-FrontendMentor.git)
    ```
 2. Instalar las dependencias:
    ```bash
